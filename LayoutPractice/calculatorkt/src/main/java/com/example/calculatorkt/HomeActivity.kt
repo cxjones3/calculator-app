@@ -16,7 +16,7 @@ class HomeActivity : AppCompatActivity() {
     //private val binding by lazy {ActivityHomeBinding.inflate(layoutInflater)}
 
     private fun calculate(){
-        val values = (binding.digits2.getText().toString()).split(" ").toTypedArray()
+        val values = (binding.digits2.text.toString()).split(" ").toTypedArray()
         val size = values.size
         if(size > 0){
             var i=0
@@ -25,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
             while(i++ < size){
                 if(i+1 < size){
                     for(op in operators){
-                        if(op.equals(values[i])){
+                        if(op == values[i]){
                             when(op){
                                 "X" -> previousValue *= (values[i+1]).toDouble()
                                 "+" -> previousValue += (values[i+1]).toDouble()
@@ -40,7 +40,7 @@ class HomeActivity : AppCompatActivity() {
             }
 
             answer = previousValue
-            binding.digits.setText(answer.toString())
+            binding.digits.text = (answer.toString())
         }
 
     }
@@ -55,16 +55,16 @@ class HomeActivity : AppCompatActivity() {
                 s = " "+s+" "
                 calculate()
             }
-            val newValue = binding.digits2.getText().toString() + s
-            binding.digits2.setText(newValue)
+            val newValue = binding.digits2.text.toString() + s
+            binding.digits2.text = (newValue)
         }
         if(code != 2){
-            val newValue = binding.digits.getText().toString() + s
+            val newValue = binding.digits.text.toString() + s
             //if(pressed.equals("X")||pressed.equals("-")||pressed.equals("+")||pressed.equals("/")){
             if(previousCode == 2){
-                binding.digits.setText(s)
+                binding.digits.text = (s)
             }else{
-                binding.digits.setText(newValue)
+                binding.digits.text = (newValue)
             }
 
         }
@@ -89,135 +89,135 @@ class HomeActivity : AppCompatActivity() {
 
         //Code 1 Number Buttons
 
-        binding.ButtonFive.setOnClickListener(){
-            val t = binding.ButtonFive.getText().toString()
+        binding.ButtonFive.setOnClickListener{
+            val t = binding.ButtonFive.text.toString()
             inputHandler(t,1)
         }
 
-        binding.ButtonSix.setOnClickListener(){v ->
-            val t = binding.ButtonSix.getText().toString()
+        binding.ButtonSix.setOnClickListener{
+            val t = binding.ButtonSix.text.toString()
             inputHandler(t,1)
         }
 
-        binding.ButtonSeven.setOnClickListener(){v ->
-            val t = binding.ButtonSeven.getText().toString()
+        binding.ButtonSeven.setOnClickListener{
+            val t = binding.ButtonSeven.text.toString()
             inputHandler(t,1)
         }
 
-        binding.ButtonNine.setOnClickListener(){v ->
-           val t = binding.ButtonNine.getText().toString()
+        binding.ButtonNine.setOnClickListener{
+            val t = binding.ButtonNine.text.toString()
             inputHandler(t,1)
         }
 
-        binding.ButtonTen.setOnClickListener(){v ->
-            val t = binding.ButtonTen.getText().toString()
+        binding.ButtonTen.setOnClickListener{
+            val t = binding.ButtonTen.text.toString()
             inputHandler(t,1)
         }
 
-        binding.ButtonEleven.setOnClickListener(){v ->
-            val t = binding.ButtonEleven.getText().toString()
+        binding.ButtonEleven.setOnClickListener{
+            val t = binding.ButtonEleven.text.toString()
             inputHandler(t,1)
         }
 
-        binding.Button13.setOnClickListener(){v ->
-            val t = binding.Button13.getText().toString()
+        binding.Button13.setOnClickListener{
+            val t = binding.Button13.text.toString()
             inputHandler(t,1)
         }
 
-        binding.Button14.setOnClickListener(){v ->
-            val t = binding.Button14.getText().toString()
+        binding.Button14.setOnClickListener{
+            val t = binding.Button14.text.toString()
             inputHandler(t,1)
         }
 
-        binding.Button15.setOnClickListener(){v ->
-            val t = binding.Button15.getText().toString()
+        binding.Button15.setOnClickListener{
+            val t = binding.Button15.text.toString()
             inputHandler(t,1)
         }
 
-        binding.Button18.setOnClickListener(){v ->
-            val t = binding.Button18.getText().toString()
+        binding.Button18.setOnClickListener{
+            val t = binding.Button18.text.toString()
             inputHandler(t,1)
         }
 
         //Code 2 Math Functions
 
-        binding.ButtonFour.setOnClickListener(){v ->
-            val t = binding.ButtonFour.getText().toString()
-            if(!pressed.equals(t) && previousCode != 2){
+        binding.ButtonFour.setOnClickListener{
+            val t = binding.ButtonFour.text.toString()
+            if(pressed != t && previousCode != 2){
                 inputHandler(t,2)
             }
         }
 
-        binding.ButtonEight.setOnClickListener(){v ->
-            val t = binding.ButtonEight.getText().toString()
-            if(!pressed.equals(t) && previousCode != 2){
+        binding.ButtonEight.setOnClickListener{
+            val t = binding.ButtonEight.text.toString()
+            if(pressed != t && previousCode != 2){
                 inputHandler(t,2)
             }
         }
 
-        binding.ButtonTwelve.setOnClickListener(){v ->
-            val t = binding.ButtonTwelve.getText().toString()
-            if(!pressed.equals(t) && previousCode != 2){
+        binding.ButtonTwelve.setOnClickListener{
+            val t = binding.ButtonTwelve.text.toString()
+            if(pressed != t && previousCode != 2){
                 inputHandler(t,2)
             }
         }
 
-        binding.Button16.setOnClickListener(){v ->
-            val t = binding.Button16.getText().toString()
-            if(!pressed.equals(t) && previousCode != 2){
+        binding.Button16.setOnClickListener{
+            val t = binding.Button16.text.toString()
+            if(pressed != t && previousCode != 2){
                 inputHandler(t,2)
             }
         }
 
         //Code  Specials
-        binding.Button17.setOnClickListener(){v ->
+        binding.Button17.setOnClickListener{
             if(previousCode == 1){
-                val t = "-"+binding.digits.getText().toString()
+                val t = "-"+binding.digits.text.toString()
 
                 inputHandler("X",2)
                 inputHandler("-1",1)
-                binding.digits.setText(t)
+                binding.digits.text = (t)
             }
         }
 
-        binding.Button19.setOnClickListener(){v ->
-            val t = binding.Button19.getText().toString()
-            val currentField =  binding.digits.getText().toString()
+        binding.Button19.setOnClickListener{
+            val t = binding.Button19.text.toString()
+            val currentField =  binding.digits.text.toString()
             // !pressed.equals(t)
             if(!currentField.contains(".")){
                 inputHandler(t,3)
             }
         }
 
-        binding.ButtonOne.setOnClickListener(){v ->
-            val t = binding.ButtonOne.getText().toString()
+        binding.ButtonOne.setOnClickListener{
+            val t = binding.ButtonOne.text.toString()
             Log.d("Main",t)
-            binding.digits.setText("0")
-            binding.digits2.setText("")
+            binding.digits.text = ("0")
+            binding.digits2.text = ("")
             previousCode = 4
         }
 
         //No Code
 
-        binding.ButtonTwo.setOnClickListener(){v ->
-            val t = binding.digits.getText().toString()
+        binding.ButtonTwo.setOnClickListener{
+            val t = binding.digits.text.toString()
             memory = t
-            // binding.digits3.setText("M")
+            // binding.digits3.text = ("M")
             Log.d("Main",t)
         }
 
-        binding.ButtonThree.setOnClickListener(){v ->
-            binding.digits.setText(memory)
-            val newValue = binding.digits2.getText().toString() + memory
-            binding.digits2.setText(newValue)
+        binding.ButtonThree.setOnClickListener{
+            binding.digits.text = (memory)
+            val newValue = binding.digits2.text.toString() + memory
+            binding.digits2.text = (newValue)
             previousCode = 1
         }
 
-        binding.Button20.setOnClickListener(){v ->
+        binding.Button20.setOnClickListener{
             if(previousCode != 4){
                 calculate()
-                val newValue = binding.digits.getText().toString() + " Boi!!!"
-                binding.digits.setText(newValue)
+                val newValue = binding.digits.text.toString() + " Boi!!!"
+                binding.digits.text = (newValue)
             }
             Log.d("Main", answer.toString())
         }
