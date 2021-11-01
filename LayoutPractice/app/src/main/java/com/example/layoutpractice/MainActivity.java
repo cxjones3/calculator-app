@@ -146,28 +146,28 @@ public class MainActivity extends AppCompatActivity {
 
         binding.ButtonFour.setOnClickListener(v ->{
             String t = binding.ButtonFour.getText().toString();
-            if(!pressed.equals(t)){
+            if(!pressed.equals(t) && previousCode != 2){
                 inputHandler(t,2);
             }
         });
 
         binding.ButtonEight.setOnClickListener(v ->{
             String t = binding.ButtonEight.getText().toString();
-            if(!pressed.equals(t)){
+            if(!pressed.equals(t) && previousCode != 2){
                 inputHandler(t,2);
             }
         });
 
         binding.ButtonTwelve.setOnClickListener(v ->{
             String t = binding.ButtonTwelve.getText().toString();
-            if(!pressed.equals(t)){
+            if(!pressed.equals(t) && previousCode != 2){
                 inputHandler(t,2);
             }
         });
 
         binding.Button16.setOnClickListener(v ->{
             String t = binding.Button16.getText().toString();
-            if(!pressed.equals(t)){
+            if(!pressed.equals(t) && previousCode != 2){
                 inputHandler(t,2);
             }
         });
@@ -219,6 +219,8 @@ public class MainActivity extends AppCompatActivity {
         binding.Button20.setOnClickListener(v ->{
             if(previousCode != 4){
                 calculate();
+                String newValue = binding.digits.getText().toString() + " Boi!!!";
+                binding.digits.setText(newValue);
             }
             Log.d("Main", Double.toString(answer));
         });

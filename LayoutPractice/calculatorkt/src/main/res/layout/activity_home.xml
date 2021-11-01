@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/digits"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="@string/calc"
+        android:textAppearance="?attr/textAppearanceHeadline4"
+        android:layout_below="@+id/digits2"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/digits2"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="@string/calc"/>
+    <!--row1-->
+    <Button
+        android:id= "@+id/Button_one"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/purple_200"
+        android:layout_below="@+id/digits"
+        android:text = "C"/>
+
+    <Button
+        android:id="@+id/Button_two"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_toEndOf="@id/Button_one"
+        android:backgroundTint="@color/teal_200"
+        android:layout_below="@+id/digits"
+        android:text = "MS"/>
+
+    <Button
+        android:id="@+id/Button_three"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_toEndOf="@id/Button_two"
+        android:backgroundTint="@color/purple_200"
+        android:layout_below="@+id/digits"
+        android:text = "MR"/>
+    <Button
+        android:id= "@+id/Button_four"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/teal_200"
+        android:layout_toEndOf="@id/Button_three"
+        android:layout_below="@+id/digits"
+        android:text = "X"/>
+    <!--row3-->
+    <Button
+        android:id= "@+id/Button_nine"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/purple_200"
+        android:layout_below="@id/Button_five"
+        android:text = "4"/>
+    <Button
+        android:id= "@+id/Button_ten"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/teal_200"
+        android:layout_below="@id/Button_six"
+        android:layout_toEndOf="@id/Button_nine"
+        android:text = "5"/>
+
+    <Button
+        android:id= "@+id/Button_eleven"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/purple_200"
+        android:layout_toEndOf="@id/Button_ten"
+        android:layout_below="@id/Button_seven"
+        android:text = "6"/>
+    <Button
+        android:id= "@+id/Button_twelve"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/teal_200"
+        android:layout_toEndOf="@id/Button_eleven"
+        android:layout_below="@id/Button_eight"
+        android:text = "/"/>
+    <!--row2-->
+    <Button
+        android:id= "@+id/Button_five"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/purple_500"
+        android:layout_below="@id/Button_one"
+        android:text = "7"/>
+
+    <Button
+        android:id="@+id/Button_six"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_below="@id/Button_two"
+        android:layout_toEndOf="@id/Button_five"
+        android:backgroundTint="@color/teal_700"
+        android:text = "8"/>
+
+    <Button
+        android:id= "@+id/Button_seven"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/purple_500"
+        android:layout_toEndOf="@id/Button_six"
+        android:layout_below="@id/Button_three"
+        android:text = "9"/>
+
+    <Button
+        android:id="@+id/Button_eight"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_below="@id/Button_four"
+        android:layout_toEndOf="@id/Button_seven"
+        android:backgroundTint="@color/teal_700"
+        android:text="-" />
+    <!--row4-->
+    <Button
+        android:id= "@+id/Button_13"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/purple_500"
+        android:layout_below="@id/Button_nine"
+        android:text = "1"/>
+    <Button
+        android:id= "@+id/Button_14"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/teal_700"
+        android:layout_below="@id/Button_ten"
+        android:layout_toEndOf="@id/Button_13"
+        android:text = "2"/>
+
+    <Button
+        android:id= "@+id/Button_15"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/purple_500"
+        android:layout_toEndOf="@id/Button_14"
+        android:layout_below="@id/Button_eleven"
+        android:text = "3"/>
+
+    <Button
+        android:id="@+id/Button_16"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:layout_below="@id/Button_twelve"
+        android:layout_toEndOf="@id/Button_15"
+        android:backgroundTint="@color/teal_700"
+        android:text = "+"/>
+
+    <!--row5-->
+    <Button
+        android:id= "@+id/Button_17"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/purple_200"
+        android:layout_below="@id/Button_13"
+        android:text = "( - )"/>
+    <Button
+        android:id= "@+id/Button_18"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/teal_200"
+        android:layout_below="@id/Button_14"
+        android:layout_toEndOf="@id/Button_17"
+        android:text = "0"/>
+
+    <Button
+        android:id= "@+id/Button_19"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/purple_200"
+        android:layout_toEndOf="@id/Button_18"
+        android:layout_below="@id/Button_15"
+        android:text = "."/>
+
+    <Button
+        android:id= "@+id/Button_20"
+        android:layout_width="@dimen/width"
+        android:layout_height="@dimen/height"
+        android:backgroundTint="@color/teal_200"
+        android:layout_toEndOf="@id/Button_19"
+        android:layout_below="@id/Button_16"
+        android:text = "="/>
+
+
+</RelativeLayout>
